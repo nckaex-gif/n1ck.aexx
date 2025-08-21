@@ -13,22 +13,53 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
       color: white;
       font-family: sans-serif;
       text-shadow: 4px 4px 15px rgba(0,0,0,0.9);
-      cursor: pointer; /* pokaže da možeš kliknuti */
+      cursor: pointer;
+      position: relative;
     }
 
     h1 {
       font-size: 10vw;
       text-align: center;
       line-height: 1.1;
+      margin: 0;
+    }
+
+    .tiktok-link {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.2rem;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    .tiktok-link img {
+      height: 30px;
+      width: 30px;
+    }
+
+    .tiktok-link:hover {
+      opacity: 0.8;
     }
   </style>
 </head>
 <body>
 
   <h1>WE ARE ON<br>THE EASY STREET</h1>
+
+  <a href="https://tiktok.com/@n1ck.aex" target="_blank" class="tiktok-link">
+    <img src="https://i.ibb.co/ZpH1n5zJ/tiktok.png" alt="TikTok">
+    @n1ck.aex
+  </a>
 
   <audio id="music" autoplay loop>
     <source src="https://audio.jukehost.co.uk/BsKfK6U0O71CNhxnuApfavEKFMQfWNZj" type="audio/mpeg">
@@ -40,13 +71,13 @@
       let elem = document.documentElement;
       if (elem.requestFullscreen) {
         elem.requestFullscreen();
-      } else if (elem.webkitRequestFullscreen) { /* Safari */
+      } else if (elem.webkitRequestFullscreen) { 
         elem.webkitRequestFullscreen();
-      } else if (elem.msRequestFullscreen) { /* IE/Edge */
+      } else if (elem.msRequestFullscreen) { 
         elem.msRequestFullscreen();
       }
       
-      // osiguraj da muzika krene kad klikne
+      // pokreni muziku na klik
       document.getElementById("music").play();
     });
   </script>
